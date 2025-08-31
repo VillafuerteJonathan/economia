@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sectores Económicos - Historia e Importancia</title>
+  <style>
+    :root {
+      --primary-color: #1e3a8a;
+      --secondary-color: #2563eb;
+      --accent-color: #facc15;
+      --text-color: #333;
+      --light-bg: #f4f4f9;
+      --card-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      scroll-behavior: smooth;
+      background: var(--light-bg);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: var(--primary-color);
+      color: white;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 15px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+    
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+    
+    nav a:hover {
+      color: var(--accent-color);
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    /* HEADER */
+    header {
+      background: linear-gradient(to right, var(--secondary-color), var(--primary-color)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40');
+      background-blend-mode: overlay;
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 120px 20px 80px;
+      margin-bottom: 30px;
+    }
+    
+    header h1 {
+      margin: 0;
+      font-size: 3.2em;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    
+    header p {
+      margin-top: 15px;
+      font-size: 1.3em;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+    }
+    
+    /* SECTION */
+ section {
+  padding: 40px 20px;
+  max-width: 1100px;
+  margin: auto;
+  border-bottom: 2px solid #ddd; /* Línea al final de cada sección */
+}
+
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .section-header h2 {
+      font-size: 2.4em;
+      margin-bottom: 15px;
+      color: var(--primary-color);
+    }
+    
+    .section-header p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.1em;
+    }
+    
+    /* GRID CARDS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+    }
+    
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 3px solid;
+    }
+    
+    .primario .card img { border-color: #15803d; }
+    .secundario .card img { border-color: #1d4ed8; }
+    .terciario .card img { border-color: #6d28d9; }
+    .cuaternario .card img { border-color: #dc2626; }
+    
+    .card .content {
+      padding: 25px;
+    }
+    
+    .card h3 {
+      margin: 0 0 15px;
+      font-size: 1.4em;
+    }
+    
+    .primario h3 { color: #15803d; }
+    .secundario h3 { color: #1d4ed8; }
+    .terciario h3 { color: #6d28d9; }
+    .cuaternario h3 { color: #dc2626; }
+    
+    .card p {
+      margin-bottom: 15px;
+    }
+    
+    .resources {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 15px;
+      border-left: 4px solid;
+    }
+    
+    .primario .resources { border-left-color: #15803d; }
+    .secundario .resources { border-left-color: #1d4ed8; }
+    .terciario .resources { border-left-color: #6d28d9; }
+    .cuaternario .resources { border-left-color: #dc2626; }
+    
+    .resources h4 {
+      margin: 0 0 10px;
+      font-size: 1.1em;
+    }
+    
+    .resources ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    
+    /* TIMELINE */
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 40px auto;
+    }
+    
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: var(--primary-color);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+    }
+    
+    .timeline-item {
+      padding: 10px 40px;
+      position: relative;
+      width: 50%;
+      box-sizing: border-box;
+    }
+    
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: white;
+      border: 4px solid var(--primary-color);
+      border-radius: 50%;
+      top: 15px;
+      right: -13px;
+      z-index: 1;
+    }
+    
+    .timeline-item:nth-child(even) {
+      left: 50%;
+    }
+    
+    .timeline-item:nth-child(odd) {
+      left: 0;
+    }
+    
+    .timeline-item:nth-child(even)::after {
+      left: -13px;
+    }
+    
+    .timeline-content {
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: var(--card-shadow);
+    }
+    
+    .timeline-date {
+      font-weight: bold;
+      color: var(--primary-color);
+      margin-bottom: 5px;
+    }
+    
+    /* FOOTER */
+    footer {
+      background: #1f2937;
+      color: #d1d5db;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 80px;
+    }
+    
+    footer p {
+      margin: 5px 0;
+    }
+    
+    /* RESPONSIVE */
+    @media screen and (max-width: 768px) {
+      header h1 {
+        font-size: 2.5em;
+      }
+      
+      .timeline::after {
+        left: 31px;
+      }
+      
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+      
+      .timeline-item:nth-child(even) {
+        left: 0;
+      }
+      
+      .timeline-item::after {
+        left: 22px;
+      }
+      
+      .timeline-item:nth-child(even)::after {
+        left: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav>
+    <a href="#intro">Inicio</a>
+    <a href="#primario">Primario</a>
+    <a href="#secundario">Secundario</a>
+    <a href="#terciario">Terciario</a>
+    <a href="#historia">Evolución</a>
+    <a href="#importancia">Importancia</a>
+  </nav>
+
+  <!-- HEADER -->
+  <header id="intro">
+    <h1>Sectores Económicos</h1>
+    <p>Un recorrido por la historia, recursos e importancia de los sectores que conforman la economía mundial</p>
+  </header>
+
+  <!-- SISTEMA ECONÓMICO -->
+  <section>
+    <div class="section-header">
+      <h2>¿Qué es un sistema económico?</h2>
+      <p>
+        Un sistema económico es el conjunto de instituciones, relaciones sociales, leyes, tecnologías y prácticas que determinan la producción, distribución y consumo de bienes y servicios en una sociedad. Para comprender su funcionamiento, los economistas dividen las actividades económicas en <b>sectores</b>, que reflejan la evolución y especialización de las economías a lo largo de la historia.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTOR PRIMARIO -->
+  <section id="primario" class="primario">
+    <div class="section-header">
+      <h2>Sector Primario</h2>
+      <p>Actividades dedicadas a la extracción y obtención de materias primas directamente de la naturaleza. Es la base fundamental de toda economía y la más antigua de todas.</p>
+    </div>
+    
+    <div class="grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854" alt="Agricultura">
+        <div class="content">
+          <h3>Agricultura</h3>
+          <p>Cultivo de la tierra para producir alimentos y materias primas. Incluye cereales (maíz, trigo, arroz), frutas, hortalizas y cultivos industriales (algodón, café, caña de azúcar).</p>
+          <div class="resources">
+            <h4>Recursos principales:</h4>
+            <ul>
+              <li>Tierra fértil</li>
+              <li>Agua para riego</li>
+              <li>Semillas y fertilizantes</li>
+              <li>Clima apropiado</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <img src="https://www.lapalabrabierta.com/lapalabrabierta/wp-content/uploads/2022/04/Agricultora-durante-el-ordeno-de-la-vaca-900x400.png" alt="Ganadería">
+        <div class="content">
+          <h3>Ganadería</h3>
+          <p>Cría de animales para obtener carne, leche, huevos, lana, cuero y otros subproductos. Incluye ganado bovino, porcino, ovino, avícola y otros.</p>
+          <div class="resources">
+            <h4>Recursos principales:</h4>
+            <ul>
+              <li>Pastizales y forrajes</li>
+              <li>Agua para consumo animal</li>
+              <li>Razas animales adecuadas</li>
+              <li>Infraestructura de crianza</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <img src="https://www.geoenergia.gob.ec/wp-content/uploads/2020/06/mineria_artesanal_y_pequena_mineria_continua_recibiendo_capacitacion_bw.png" alt="Minería">
+        <div class="content">
+          <h3>Minería</h3>
+          <p>Extracción de minerales metálicos, no metálicos y combustibles fósiles del subsuelo. Incluye petróleo, carbón, hierro, cobre, oro y materiales para construcción.</p>
+          <div class="resources">
+            <h4>Recursos principales:</h4>
+            <ul>
+              <li>Yacimientos minerales</li>
+              <li>Tecnología de extracción</li>
+              <li>Energía para operaciones</li>
+              <li>Infraestructura de transporte</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section-header">
+      <h3>Importancia del Sector Primario</h3>
+      <p>Provee los alimentos básicos para la población y las materias primas indispensables para los demás sectores. En muchos países en desarrollo, representa una parte significativa del PIB y empleo. Su desarrollo sostenible es crucial para la seguridad alimentaria y la conservación de los recursos naturales.</p>
+    </div>
+  </section>
+
+  <!-- SECTOR SECUNDARIO -->
+  <section id="secundario" class="secundario">
+    <div class="section-header">
+      <h2>Sector Secundario</h2>
+      <p>Transforma las materias primas del sector primario en productos elaborados o semielaborados. Este sector impulsa la industrialización y el valor agregado.</p>
+    </div>
+    
+    <div class="grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" alt="Industria Manufacturera">
+        <div class="content">
+          <h3>Industria Manufacturera</h3>
+          <p>Transformación de materias primas en productos terminados. Incluye industria textil, automotriz, electrónica, alimentaria, farmacéutica y de bienes de consumo.</p>
+          <div class="resources">
+            <h4>Recursos principales:</h4>
+            <ul>
+              <li>Materias primas</li>
+              <li>Energía</li>
+              <li>Mano de obra especializada</li>
+              <li>Maquinaria y tecnología</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <img src="data:image/jpeg;base64,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" alt="Construcción">
+        <div class="content">
+          <h3>Construcción</h3>
+          <p>Creación de infraestructura física para la sociedad. Incluye viviendas, edificios, carreteras, puentes, presas y obras de ingeniería civil.</p>
+          <div class="resources">
+            <h4>Recursos principales:</h4>
+            <ul>
+              <li>Materiales de construcción</li>
+              <li>Mano de obra calificada</li>
+              <li>Maquinaria pesada</li>
+              <li>Terreno y permisos</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <img src="https://eadic.com/wp-content/uploads/2017/05/Foto17-1.jpg" alt="Energía">
+        <div class="content">
+          <h3>Generación de Energía</h3>
+          <p>Producción y distribución de energía eléctrica y térmica. Incluye centrales hidroeléctricas, termoeléctricas, nucleares, parques eólicos y solares.</p>
+          <div class="resources">
+            <h4>Recursos principales:</h4>
+            <ul>
+              <li>Combustibles o fuentes renovables</li>
+              <li>Infraestructura de generación</li>
+              <li>Redes de distribución</li>
+              <li>Tecnología especializada</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section-header">
+      <h3>Importancia del Sector Secundario</h3>
+      <p>Agrega valor a las materias primas, generando productos con mayor utilidad y precio. Es clave para el desarrollo tecnológico, la innovación y la creación de empleos mejor remunerados. La industrialización ha sido históricamente el camino hacia el desarrollo económico de las naciones.</p>
+    </div>
+  </section>
+
+  <!-- SECTOR TERCIARIO -->
+  <section id="terciario" class="terciario">
+    <div class="section-header">
+      <h2>Sector Terciario</h2>
+      <p>Conocido como sector servicios, engloba actividades que no producen bienes materiales pero facilitan el funcionamiento de la economía y satisfacen necesidades de la población.</p>
+    </div>
+    
+    <div class="grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1497493292307-31c376b6e479" alt="Comercio">
+        <div class="content">
+          <h3>Comercio</h3>
+          <p>Intercambio de bienes y servicios entre productores y consumidores. Incluye comercio minorista, mayorista, nacional e internacional.</p>
+          <div class="resources">
+            <h4>Recursos principales:</h4>
+            <ul>
+              <li>Productos para comercializar</li>
+              <li>Locales y puntos de venta</li>
+              <li>Sistemas de logística</li>
+              <li>Medios de pago</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <img src="https://www.entornoturistico.com/wp-content/uploads/2016/03/turismo.jpg" alt="Turismo">
+        <div class="content">
+          <h3>Turismo</h3>
+          <p>Actividades relacionadas con los viajes por placer, negocios o otros motivos. Incluye hospedaje, transporte, gastronomía y actividades recreativas.</p>
+          <div class="resources">
+            <h4>Recursos principales:</h4>
+            <ul>
+              <li>Atractivos naturales/culturales</li>
+              <li>Infraestructura hotelera</li>
+              <li>Medios de transporte</li>
+              <li>Servicios complementarios</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa" alt="Servicios profesionales">
+        <div class="content">
+          <h3>Servicios Profesionales</h3>
+          <p>Servicios basados en conocimiento especializado. Incluye servicios legales, contables, de consultoría, ingeniería, arquitectura y tecnológicos.</p>
+          <div class="resources">
+            <h4>Recursos principales:</h4>
+            <ul>
+              <li>Capital humano calificado</li>
+              <li>Tecnología de información</li>
+              <li>Infraestructura de oficinas</li>
+              <li>Redes profesionales</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section-header">
+      <h3>Importancia del Sector Terciario</h3>
+      <p>En las economías modernas, es el sector que más contribuye al PIB y empleo. Facilita el funcionamiento de los otros sectores mediante servicios de distribución, financieros, educativos y de salud. Su crecimiento está asociado con mayores niveles de desarrollo y calidad de vida.</p>
+    </div>
+  </section>
+
+  <!-- SECTOR CUATERNARIO -->
+  <section class="cuaternario">
+    <div class="section-header">
+      <h2>Sector Cuaternario</h2>
+      <p>Sector del conocimiento que incluye actividades intelectuales y de innovación. Es el sector más reciente en la clasificación económica.</p>
+    </div>
+    
+    <div class="grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b" alt="Investigación">
+        <div class="content">
+          <h3>Investigación y Desarrollo</h3>
+          <p>Creación de nuevo conocimiento científico y tecnológico. Incluye investigación básica, aplicada y desarrollo experimental en todas las áreas del saber.</p>
+          <div class="resources">
+            <h4>Recursos principales:</h4>
+            <ul>
+              <li>Investigadores especializados</li>
+              <li>Laboratorios equipados</li>
+              <li>Financiamiento</li>
+              <li>Acceso a información científica</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978" alt="Tecnología">
+        <div class="content">
+          <h3>Tecnologías de la Información</h3>
+          <p>Desarrollo, implementación y gestión de sistemas informáticos. Incluye software, hardware, inteligencia artificial, big data y ciberseguridad.</p>
+          <div class="resources">
+            <h4>Recursos principales:</h4>
+            <ul>
+              <li>Profesionales TI</li>
+              <li>Infraestructura computacional</li>
+              <li>Conectividad</li>
+              <li>Centros de datos</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6" alt="Planificación">
+        <div class="content">
+          <h3>Planificación y Consultoría Estratégica</h3>
+          <p>Servicios de alta especialización para la toma de decisiones complejas. Incluye consultoría gerencial, económica, financiera y de políticas públicas.</p>
+          <div class="resources">
+            <h4>Recursos principales:</h4>
+            <ul>
+              <li>Expertos en diversas áreas</li>
+              <li>Metodologías analíticas</li>
+              <li>Acceso a datos</li>
+              <li>Herramientas de modelación</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section-header">
+      <h3>Importancia del Sector Cuaternario</h3>
+      <p>Es el motor de la innovación y el progreso tecnológico en la sociedad moderna. Genera avances que transforman todos los demás sectores económicos. Las economías más desarrolladas tienen una fuerte presencia de este sector, que representa su ventaja competitiva en el panorama global.</p>
+    </div>
+  </section>
+
+  <!-- HISTORIA Y EVOLUCIÓN -->
+  <section id="historia">
+    <div class="section-header">
+      <h2>Evolución Histórica de los Sectores Económicos</h2>
+      <p>La importancia relativa de los sectores económicos ha cambiado drásticamente a lo largo de la historia, reflejando el desarrollo tecnológico y social de la humanidad.</p>
+    </div>
+    
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-date">Hasta siglo XVIII</div>
+          <h3>Economías Preindustriales</h3>
+          <p>Más del 75% de la población activa se dedicaba al sector primario (agricultura, ganadería, pesca). Las economías eran principalmente de subsistencia con poco excedente comercial.</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-date">Siglos XVIII-XIX</div>
+          <h3>Revolución Industrial</h3>
+          <p>La mecanización transformó la producción manufacturera. El sector secundario creció rápidamente, atrayendo mano de obra del campo a las ciudades. Surgen las fábricas y la producción en masa.</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-date">Siglo XX</div>
+          <h3>Expansión del Sector Terciario</h3>
+          <p>Las economías desarrolladas experimentaron un "terciarización", con los servicios superando a la industria en contribución al PIB y empleo. Mejoras en productividad redujeron la mano de obra necesaria en agricultura e industria.</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-date">Finales siglo XX - Actualidad</div>
+          <h3>Sociedad de la Información</h3>
+          <p>Surgimiento del sector cuaternario basado en el conocimiento. La digitalización y globalización transforman todos los sectores económicos. La innovación tecnológica se convierte en el principal motor del crecimiento.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPORTANCIA -->
+  <section id="importancia">
+    <div class="section-header">
+      <h2>Importancia de la Clasificación por Sectores</h2>
+      <p>La división de la economía en sectores permite comprender mejor su estructura y dinámica, siendo una herramienta fundamental para el análisis económico y la formulación de políticas.</p>
+    </div>
+    
+    <div class="grid">
+      <div class="card">
+        <div class="content">
+          <h3>Análisis del Desarrollo Económico</h3>
+          <p>La transición de una economía dominada por el sector primario hacia una basada en servicios e innovación indica el nivel de desarrollo de un país. Los países más avanzados tienen mayor peso de los sectores terciario y cuaternario.</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="content">
+          <h3>Planificación de Políticas</h3>
+          <p>Los gobiernos utilizan esta clasificación para diseñar políticas sectoriales específicas, incentivos fiscales, programas de formación laboral y estrategias de desarrollo económico regional.</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="content">
+          <h3>Estudios de Mercado y Inversión</h3>
+          <p>Empresas e inversionistas analizan los sectores para identificar oportunidades, tendencias de crecimiento, riesgos y potencial de rentabilidad en diferentes áreas de la economía.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 - Landing Page Informativa | Sectores Económicos</p>
+    <p>Material educativo para comprender la estructura económica y su evolución histórica</p>
+  </footer>
+</body>
+</html>
